@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.7.0@d4377c0baf3ffbf0b1ec6998e8d1be2a40971005">
+<files psalm-version="4.7.2@83a0325c0a95c0ab531d6b90c877068b464377b5">
   <file src="3rdparty/sabre/dav/lib/CalDAV/Calendar.php">
     <MoreSpecificImplementedParamType occurrences="1">
       <code>$calendarData</code>
@@ -112,9 +112,6 @@
     </MissingFile>
   </file>
   <file src="apps/dav/lib/AppInfo/Application.php">
-    <UndefinedFunction occurrences="1">
-      <code>\Sabre\Uri\split($principalUri)</code>
-    </UndefinedFunction>
     <UndefinedInterfaceMethod occurrences="1">
       <code>getAppDataDir</code>
     </UndefinedInterfaceMethod>
@@ -164,13 +161,12 @@
     </NullableReturnStatement>
   </file>
   <file src="apps/dav/lib/CalDAV/CalDavBackend.php">
-    <InvalidArgument occurrences="14">
+    <InvalidArgument occurrences="13">
       <code>'\OCA\DAV\CalDAV\CalDavBackend::createCachedCalendarObject'</code>
       <code>'\OCA\DAV\CalDAV\CalDavBackend::createCalendar'</code>
       <code>'\OCA\DAV\CalDAV\CalDavBackend::createCalendarObject'</code>
       <code>'\OCA\DAV\CalDAV\CalDavBackend::createSubscription'</code>
       <code>'\OCA\DAV\CalDAV\CalDavBackend::deleteCachedCalendarObject'</code>
-      <code>'\OCA\DAV\CalDAV\CalDavBackend::deleteCalendar'</code>
       <code>'\OCA\DAV\CalDAV\CalDavBackend::deleteCalendarObject'</code>
       <code>'\OCA\DAV\CalDAV\CalDavBackend::deleteSubscription'</code>
       <code>'\OCA\DAV\CalDAV\CalDavBackend::publishCalendar'</code>
@@ -195,8 +191,7 @@
     <RedundantCast occurrences="1">
       <code>(int)$calendarId</code>
     </RedundantCast>
-    <TooManyArguments occurrences="15">
-      <code>dispatch</code>
+    <TooManyArguments occurrences="14">
       <code>dispatch</code>
       <code>dispatch</code>
       <code>dispatch</code>
@@ -860,6 +855,11 @@
       <code>$this-&gt;usersToDelete</code>
     </InvalidPropertyAssignmentValue>
   </file>
+  <file src="apps/dav/lib/Listener/CalendarDeletionDefaultUpdaterListener.php">
+    <UndefinedFunction occurrences="1">
+      <code>\Sabre\Uri\split($principalUri)</code>
+    </UndefinedFunction>
+  </file>
   <file src="apps/dav/lib/RootCollection.php">
     <UndefinedPropertyAssignment occurrences="1">
       <code>$publicCalendarRoot-&gt;disableListing</code>
@@ -1082,8 +1082,7 @@
     <InvalidReturnType occurrences="1">
       <code>string</code>
     </InvalidReturnType>
-    <InvalidScalarArgument occurrences="6">
-      <code>$id</code>
+    <InvalidScalarArgument occurrences="5">
       <code>$id</code>
       <code>$id</code>
       <code>$id</code>
@@ -1394,9 +1393,6 @@
     </InvalidReturnType>
   </file>
   <file src="apps/files_external/lib/Lib/Storage/SMB.php">
-    <FalsableReturnStatement occurrences="1">
-      <code>false</code>
-    </FalsableReturnStatement>
     <InvalidArgument occurrences="1">
       <code>$files</code>
     </InvalidArgument>
@@ -1800,9 +1796,6 @@
       <code>$groupid === null</code>
       <code>$groupid === null</code>
     </TypeDoesNotContainNull>
-    <UndefinedInterfaceMethod occurrences="1">
-      <code>getSubAdmin</code>
-    </UndefinedInterfaceMethod>
   </file>
   <file src="apps/settings/lib/AppInfo/Application.php">
     <InvalidScalarArgument occurrences="1">
@@ -2523,12 +2516,6 @@
       <code>1</code>
       <code>1</code>
     </InvalidScalarArgument>
-    <UndefinedThisPropertyAssignment occurrences="1">
-      <code>$this-&gt;installer</code>
-    </UndefinedThisPropertyAssignment>
-    <UndefinedThisPropertyFetch occurrences="1">
-      <code>$this-&gt;installer</code>
-    </UndefinedThisPropertyFetch>
   </file>
   <file src="core/Command/User/Setting.php">
     <InvalidScalarArgument occurrences="1">
@@ -2603,9 +2590,6 @@
     <InvalidArgument occurrences="1">
       <code>$restrictions</code>
     </InvalidArgument>
-    <InvalidScalarArgument occurrences="1">
-      <code>true</code>
-    </InvalidScalarArgument>
     <RedundantCondition occurrences="1">
       <code>((array)$request-&gt;getParam('appid')) !== ''</code>
     </RedundantCondition>
@@ -3178,7 +3162,6 @@
       <code>'\OC\DB\Migrator::executeSql'</code>
     </InvalidArgument>
     <TooManyArguments occurrences="1">
-      <code>dispatch</code>
       <code>dispatch</code>
     </TooManyArguments>
   </file>
@@ -4114,15 +4097,6 @@
       <code>array</code>
       <code>array|mixed</code>
     </LessSpecificImplementedReturnType>
-  </file>
-  <file src="lib/private/L10N/L10N.php">
-    <InvalidPropertyAssignmentValue occurrences="1"/>
-    <InvalidReturnStatement occurrences="1">
-      <code>$this-&gt;pluralFormFunction</code>
-    </InvalidReturnStatement>
-    <InvalidReturnType occurrences="1">
-      <code>\Closure</code>
-    </InvalidReturnType>
   </file>
   <file src="lib/private/LargeFileHelper.php">
     <InvalidOperand occurrences="2">

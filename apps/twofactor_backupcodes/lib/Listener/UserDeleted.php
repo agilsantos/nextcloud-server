@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * @copyright Copyright (c) 2020, Morris Jobke <hey@morrisjobke.de>
+ * @copyright Copyright (c) 2021 Roeland Jago Douma <roeland@famdouma.nl>
  *
- * @author Morris Jobke <hey@morrisjobke.de>
+ * @author Roeland Jago Douma <roeland@famdouma.nl>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -24,37 +24,27 @@ declare(strict_types=1);
  *
  */
 
-namespace OCA\Federation\Listener;
+namespace OCA\TwoFactorBackupCodes\Listener;
 
-use OCA\FederatedFileSharing\Events\FederatedShareAddedEvent;
-use OCA\Federation\TrustedServers;
+use OCA\TwoFactorBackupCodes\Db\BackupCodeMapper;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
+use OCP\User\Events\UserDeletedEvent;
 
-/**
- * Automatically add new servers to the list of trusted servers.
- *
- * @since 20.0.0
- */
-class FederatedShareAddedListener implements IEventListener {
-	/** @var TrustedServers */
-	private $trustedServers;
+class UserDeleted implements IEventListener {
 
-	public function __construct(TrustedServers $trustedServers) {
-		$this->trustedServers = $trustedServers;
+	/** @var BackupCodeMapper */
+	private $backupCodeMapper;
+
+	public function __construct(BackupCodeMapper $backupCodeMapper) {
+		$this->backupCodeMapper = $backupCodeMapper;
 	}
 
 	public function handle(Event $event): void {
-		if (!($event instanceof FederatedShareAddedEvent)) {
+		if (!($event instanceof UserDeletedEvent)) {
 			return;
 		}
 
-		$server = $event->getRemote();
-		if (
-			$this->trustedServers->getAutoAddServers() === true &&
-			$this->trustedServers->isTrustedServer($server) === false
-		) {
-			$this->trustedServers->addServer($server);
-		}
+		$this->backupCodeMapper->deleteCodes($event->getUser());
 	}
 }

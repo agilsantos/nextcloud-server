@@ -70,6 +70,7 @@
     "Empty file" : "Пустой файл",
     "Module with ID: %s does not exist. Please enable it in your apps settings or contact your administrator." : "Модуль с ID «%s» не существует. Включите его в настройках приложений или обратитесь к администратору.",
     "File already exists" : "Файл уже существует",
+    "Invalid path" : "Некорректный путь",
     "Failed to create file from template" : "Не удалось создать файл на основе шаблона",
     "Templates" : "Шаблоны",
     "File name is a reserved word" : "Имя файла является зарезервированным словом",
@@ -117,8 +118,9 @@
     "Files can’t be shared with delete permissions" : "Файлы не могут иметь общий доступ с правами на удаление",
     "Files can’t be shared with create permissions" : "Файлы не могут иметь общий доступ с правами на создание",
     "Expiration date is in the past" : "Дата окончания срока действия уже прошла",
-    "Can’t set expiration date more than %s days in the future" : "Невозможно установить дату окончания срока действия более %s дней",
+    "_Can’t set expiration date more than %n day in the future_::_Can’t set expiration date more than %n days in the future_" : ["Невозможно установить дату окончания срока действия более %n дня","Невозможно установить дату окончания срока действия более %n дней","Невозможно установить дату окончания срока действия более %n дней","Невозможно установить дату окончания срока действия более %n дней"],
     "Sharing is only allowed with group members" : "Разрешено публиковать только для участников группы",
+    "Sharing %s failed, because this item is already shared with user %s" : "Не удалось поделиться %s, так как элемент находится в общем доступе у %s",
     "%1$s shared »%2$s« with you" : "%1$s предоставил(а) вам доступ к «%2$s»",
     "%1$s shared »%2$s« with you." : "%1$s предоставил(а) вам доступ к «%2$s».",
     "Click the button below to open it." : "Нажмите расположенную ниже кнопку для перехода к полученному общему ресурсу.",
@@ -230,6 +232,7 @@
     "Storage connection timeout. %s" : "Истекло время ожидания подключения к хранилищу. %s",
     "Following databases are supported: %s" : "Поддерживаются следующие СУБД: %s",
     "Following platforms are supported: %s" : "Поддерживаются следующие платформы: %s",
-    "Invalid Federated Cloud ID" : "Неверный ID в объединении облачных хранилищ."
+    "Invalid Federated Cloud ID" : "Неверный ID в объединении облачных хранилищ.",
+    "Can’t set expiration date more than %s days in the future" : "Невозможно установить дату окончания срока действия более %s дней"
 },"pluralForm" :"nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);"
 }

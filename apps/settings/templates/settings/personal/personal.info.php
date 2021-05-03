@@ -39,20 +39,20 @@ script('settings', [
 		<div>
 			<form id="avatarform" class="section" method="post" action="<?php p(\OC::$server->getURLGenerator()->linkToRoute('core.avatar.postAvatar')); ?>">
 				<h3>
-					<label><?php p($l->t('Profile picture')); ?></label>
-					<div class="federation-menu" tabindex="0">
+					<?php p($l->t('Profile picture')); ?>
+					<a href="#" class="federation-menu" aria-label="<?php p($l->t('Change privacy level of profile picture')); ?>">
 						<span class="icon-federation-menu icon-password">
 							<span class="icon-triangle-s"></span>
 						</span>
-					</div>
+					</a>
 				</h3>
 				<div id="displayavatar">
 					<div class="avatardiv"></div>
 					<div class="warning hidden"></div>
 					<?php if ($_['avatarChangeSupported']): ?>
-						<label for="uploadavatar" class="inlineblock button icon-upload svg" id="uploadavatarbutton" title="<?php p($l->t('Upload new')); ?>"></label>
-						<div class="inlineblock button icon-folder svg" id="selectavatar" title="<?php p($l->t('Select from Files')); ?>"></div>
-						<div class="hidden button icon-delete svg" id="removeavatar" title="<?php p($l->t('Remove image')); ?>"></div>
+						<label for="uploadavatar" class="inlineblock button icon-upload svg" id="uploadavatarbutton" title="<?php p($l->t('Upload new')); ?>" tabindex="0"></label>
+						<button class="inlineblock button icon-folder svg" id="selectavatar" title="<?php p($l->t('Select from Files')); ?>"></button>
+						<button class="hidden button icon-delete svg" id="removeavatar" title="<?php p($l->t('Remove image')); ?>"></button>
 						<input type="file" name="files[]" id="uploadavatar" class="hiddenuploadfield" accept="image/*">
 						<p><em><?php p($l->t('png or jpg, max. 20 MB')); ?></em></p>
 					<?php else: ?>
@@ -101,11 +101,11 @@ script('settings', [
 			<form id="displaynameform" class="section">
 				<h3>
 					<label for="displayname"><?php p($l->t('Full name')); ?></label>
-					<div class="federation-menu" tabindex="0">
+					<a href="#" class="federation-menu" aria-label="<?php p($l->t('Change privacy level of full name')); ?>">
 						<span class="icon-federation-menu icon-password">
 							<span class="icon-triangle-s"></span>
 						</span>
-					</div>
+					</a>
 				</h3>
 				<input type="text" id="displayname" name="displayname"
 					<?php if (!$_['displayNameChangeSupported']) {
@@ -122,20 +122,18 @@ script('settings', [
 				<?php } ?>
 				<span class="icon-checkmark hidden"></span>
 				<span class="icon-error hidden" ></span>
-				<?php if ($_['lookupServerUploadEnabled']) { ?>
 				<input type="hidden" id="displaynamescope" value="<?php p($_['displayNameScope']) ?>">
-				<?php } ?>
 			</form>
 		</div>
 		<div class="personal-settings-setting-box">
 			<form id="emailform" class="section">
 				<h3>
 					<label for="email"><?php p($l->t('Email')); ?></label>
-					<div class="federation-menu" tabindex="0">
+					<a href="#" class="federation-menu" aria-label="<?php p($l->t('Change privacy level of email')); ?>">
 						<span class="icon-federation-menu icon-password">
 							<span class="icon-triangle-s"></span>
 						</span>
-					</div>
+					</a>
 				</h3>
 				<div class="verify <?php if ($_['email'] === '' || $_['emailScope'] !== 'public') {
 									p('hidden');
@@ -172,20 +170,18 @@ script('settings', [
 				<?php if ($_['displayNameChangeSupported']) { ?>
 					<em><?php p($l->t('For password reset and notifications')); ?></em>
 				<?php } ?>
-				<?php if ($_['lookupServerUploadEnabled']) { ?>
-					<input type="hidden" id="emailscope" value="<?php p($_['emailScope']) ?>">
-				<?php } ?>
+				<input type="hidden" id="emailscope" value="<?php p($_['emailScope']) ?>">
 			</form>
 		</div>
 		<div class="personal-settings-setting-box">
 			<form id="phoneform" class="section">
 				<h3>
 					<label for="phone"><?php p($l->t('Phone number')); ?></label>
-					<div class="federation-menu" tabindex="0">
+					<a href="#" class="federation-menu" aria-label="<?php p($l->t('Change privacy level of phone number')); ?>">
 						<span class="icon-federation-menu icon-password">
 							<span class="icon-triangle-s"></span>
 						</span>
-					</div>
+					</a>
 				</h3>
 				<input type="tel" id="phone" name="phone"
 					   value="<?php p($_['phone']) ?>"
@@ -200,11 +196,11 @@ script('settings', [
 			<form id="addressform" class="section">
 				<h3>
 					<label for="address"><?php p($l->t('Address')); ?></label>
-					<div class="federation-menu" tabindex="0">
+					<a href="#" class="federation-menu" aria-label="<?php p($l->t('Change privacy level of address')); ?>">
 						<span class="icon-federation-menu icon-password">
 							<span class="icon-triangle-s"></span>
 						</span>
-					</div>
+					</a>
 				</h3>
 				<input type="text" id="address" name="address"
 					   placeholder="<?php p($l->t('Your postal address')); ?>"
@@ -219,11 +215,11 @@ script('settings', [
 			<form id="websiteform" class="section">
 				<h3>
 					<label for="website"><?php p($l->t('Website')); ?></label>
-					<div class="federation-menu" tabindex="0">
+					<a href="#" class="federation-menu" aria-label="<?php p($l->t('Change privacy level of website')); ?>">
 						<span class="icon-federation-menu icon-password">
 							<span class="icon-triangle-s"></span>
 						</span>
-					</div>
+					</a>
 				</h3>
 				<?php if ($_['lookupServerUploadEnabled']) { ?>
 				<div class="verify <?php if ($_['website'] === '' || $_['websiteScope'] !== 'public') {
@@ -268,11 +264,11 @@ script('settings', [
 			<form id="twitterform" class="section">
 				<h3>
 					<label for="twitter"><?php p($l->t('Twitter')); ?></label>
-					<div class="federation-menu" tabindex="0">
+					<a href="#" class="federation-menu" aria-label="<?php p($l->t('Change privacy level of Twitter profile')); ?>">
 						<span class="icon-federation-menu icon-password">
 							<span class="icon-triangle-s"></span>
 						</span>
-					</div>
+					</a>
 				</h3>
 				<?php if ($_['lookupServerUploadEnabled']) { ?>
 				<div class="verify <?php if ($_['twitter'] === '' || $_['twitterScope'] !== 'public') {

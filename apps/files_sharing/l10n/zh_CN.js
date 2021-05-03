@@ -103,7 +103,7 @@ OC.L10N.register(
     "Please specify a file or folder path" : "请指定一个文件或文件夹路径",
     "Wrong path, file/folder doesn't exist" : "路径错误，文件或文件夹不存在",
     "Could not create share" : "无法创建共享",
-    "invalid permissions" : "无效的权限",
+    "Invalid permissions" : "无效的权限 ",
     "Please specify a valid user" : "请指定一个有效的用户",
     "Group sharing is disabled by the administrator" : "群组共享已被管理员禁用",
     "Please specify a valid group" : "请指定一个有效的组",
@@ -113,6 +113,8 @@ OC.L10N.register(
     "Sharing %s sending the password by Nextcloud Talk failed because Nextcloud Talk is not enabled" : "由于 Nextcloud Talk 没有启用，所以通过 Nextcloud Talk 发送 %s 共享密码失败。",
     "Invalid date, date format must be YYYY-MM-DD" : "无效的日期，日期格式必须是 YYYY-MM-DD",
     "Sharing %1$s failed because the back end does not allow shares from type %2$s" : "共享 %1$s 失败，后端不允许类型为 %2$s 的共享",
+    "Please specify a valid federated user id" : "请指定一个有效的联邦用户 id",
+    "Please specify a valid federated group id" : "请指定一个有效的联邦群组 id",
     "You cannot share to a Circle if the app is not enabled" : "如果这个应用程序不可用，您不能共享到圈子",
     "Please specify a valid circle" : "请指明一个可用圈子",
     "Sharing %s failed because the back end does not support room shares" : "由于后端不支持房间共享，所以共享 %s 失败。",
@@ -235,6 +237,7 @@ OC.L10N.register(
     "Uploading files" : "正在上传文件",
     "Uploaded files:" : "上传的文件： ",
     "By uploading files, you agree to the %1$sterms of service%2$s." : "通过上传文件，您同意了 %1$s 服务条款 %2$s。",
+    "invalid permissions" : "无效的权限",
     "Name, email, or federated cloud ID …" : "名称，电子邮件或联合云 ID ..."
 },
 "nplurals=1; plural=0;");

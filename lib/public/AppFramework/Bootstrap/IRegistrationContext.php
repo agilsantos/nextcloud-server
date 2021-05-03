@@ -30,10 +30,12 @@ declare(strict_types=1);
 namespace OCP\AppFramework\Bootstrap;
 
 use OCP\AppFramework\IAppContainer;
+use OCP\Authentication\TwoFactorAuth\IProvider;
 use OCP\Capabilities\ICapability;
 use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Files\Template\ICustomTemplateProvider;
 use OCP\IContainer;
+use OCP\Notification\INotifier;
 
 /**
  * The context object passed to IBootstrap::register
@@ -209,4 +211,22 @@ interface IRegistrationContext {
 	 * @since 21.0.0
 	 */
 	public function registerTemplateProvider(string $providerClass): void;
+
+	/**
+	 * Register an INotifier class
+	 *
+	 * @param string $notifierClass
+	 * @psalm-param class-string<INotifier> $notifierClass
+	 * @since 22.0.0
+	 */
+	public function registerNotifierService(string $notifierClass): void;
+
+	/**
+	 * Register a two-factor provider
+	 *
+	 * @param string $twoFactorProviderClass
+	 * @psalm-param class-string<IProvider> $twoFactorProviderClass
+	 * @since 22.0.0
+	 */
+	public function registerTwoFactorProvider(string $twoFactorProviderClass): void;
 }

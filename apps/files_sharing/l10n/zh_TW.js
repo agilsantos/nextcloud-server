@@ -103,7 +103,7 @@ OC.L10N.register(
     "Please specify a file or folder path" : "請指定檔案或資料夾路徑",
     "Wrong path, file/folder doesn't exist" : "錯誤的路徑，該檔案或資料夾不存在",
     "Could not create share" : "無法建立分享",
-    "invalid permissions" : "無效的權限",
+    "Invalid permissions" : "無效的權限",
     "Please specify a valid user" : "請指定有效使用者",
     "Group sharing is disabled by the administrator" : "群組分享已被管理員停用",
     "Please specify a valid group" : "請指定有效的群組",
@@ -113,6 +113,8 @@ OC.L10N.register(
     "Sharing %s sending the password by Nextcloud Talk failed because Nextcloud Talk is not enabled" : "因為未啟用 Nextcloud Talk，因此透過 Nextcloud Talk 傳送密碼分享 %s 失敗",
     "Invalid date, date format must be YYYY-MM-DD" : "無效的日期，需為 YYYY-MM-DD 格式",
     "Sharing %1$s failed because the back end does not allow shares from type %2$s" : "分享 %1$s 失敗，因為後端不允許來自 %2$s 類型的分享",
+    "Please specify a valid federated user id" : "請指定有效的聯盟使用者 id",
+    "Please specify a valid federated group id" : "請指定有效的聯盟群組 id",
     "You cannot share to a Circle if the app is not enabled" : "因為應用程式未啟用，所以您無法分享至小圈圈",
     "Please specify a valid circle" : "請指定有效的小圈圈",
     "Sharing %s failed because the back end does not support room shares" : "分享 %s 失敗，因為後端不支援聊天室分享",
@@ -235,6 +237,7 @@ OC.L10N.register(
     "Uploading files" : "正在上傳檔案",
     "Uploaded files:" : "已上傳的檔案：",
     "By uploading files, you agree to the %1$sterms of service%2$s." : "上傳檔案即表示您同意%1$s服務條款%2$s。",
+    "invalid permissions" : "無效的權限",
     "Name, email, or federated cloud ID …" : "名稱、電子郵件或雲端聯盟 ID……"
 },
 "nplurals=1; plural=0;");

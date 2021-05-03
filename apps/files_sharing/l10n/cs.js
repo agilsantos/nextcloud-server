@@ -103,7 +103,6 @@ OC.L10N.register(
     "Please specify a file or folder path" : "Zadejte popis umístění souboru či složky",
     "Wrong path, file/folder doesn't exist" : "Nesprávný popis umístění – soubor/složka neexistuje",
     "Could not create share" : "Nelze vytvořit sdílení",
-    "invalid permissions" : "neplatná oprávnění",
     "Please specify a valid user" : "Zadejte platného uživatele",
     "Group sharing is disabled by the administrator" : "Skupinové sdílení bylo zakázáno správcem",
     "Please specify a valid group" : "Zadejte platnou skupinu",
@@ -113,6 +112,8 @@ OC.L10N.register(
     "Sharing %s sending the password by Nextcloud Talk failed because Nextcloud Talk is not enabled" : "Sdílení %s posláním hesla přes Nextcloud Talk se nezdařilo, protože Nextcloud Talk není zapnutý",
     "Invalid date, date format must be YYYY-MM-DD" : "Neplatné datum – je třeba, aby jeho formát byl RRRR-MM-DD",
     "Sharing %1$s failed because the back end does not allow shares from type %2$s" : "Sdílení %1$s se nezdařilo, protože podpůrná vrstva nepodporuje typ sdílení %2$s",
+    "Please specify a valid federated user id" : "Zadejte platné federované uživatelské id",
+    "Please specify a valid federated group id" : "Zadejte platné federované id skupiny",
     "You cannot share to a Circle if the app is not enabled" : "Do okruhu nemůžete sdílet, pokud není aplikace zapnuta",
     "Please specify a valid circle" : "Zadejte platný okruh",
     "Sharing %s failed because the back end does not support room shares" : "Sdílení %s se nezdařilo protože podpůrná vrstva nepodporuje sdílení místností",
@@ -235,6 +236,7 @@ OC.L10N.register(
     "Uploading files" : "Nahrávání souborů",
     "Uploaded files:" : "Nahrané soubory:",
     "By uploading files, you agree to the %1$sterms of service%2$s." : "Nahráním souborů vyjadřujete souhlas s %1$svšeobecnými podmínkami%2$s.",
+    "invalid permissions" : "neplatná oprávnění",
     "Name, email, or federated cloud ID …" : "Jméno, e-mail nebo identifikátor ve federovaném cloudu…"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");

@@ -1,7 +1,8 @@
 <?php
+
+declare(strict_types=1);
+
 /**
- *
- *
  * @author Christoph Wurst <christoph@winzerhof-wurst.at>
  * @author Joas Schilling <coding@schilljs.com>
  * @author Morris Jobke <hey@morrisjobke.de>
@@ -74,11 +75,11 @@ class SettingsControllerTest extends TestCase {
 		$this->storage->expects($this->once())
 			->method('getBackupCodesState')
 			->with($user)
-			->willReturn('state');
+			->willReturn(['state']);
 
 		$expected = [
 			'codes' => $codes,
-			'state' => 'state',
+			'state' => ['state'],
 		];
 		$response = $this->controller->createCodes();
 		$this->assertInstanceOf(JSONResponse::class, $response);

@@ -1166,6 +1166,31 @@ trigger:
 
 ---
 kind: pipeline
+name: integration-contacts-menu
+
+steps:
+- name: submodules
+  image: docker:git
+  commands:
+    - git submodule update --init
+- name: integration-contacts-menu
+  image: nextcloudci/integration-php7.3:integration-php7.3-2
+  commands:
+    - bash tests/drone-run-integration-tests.sh || exit 0
+    - ./occ maintenance:install --admin-pass=admin --data-dir=/dev/shm/nc_int
+    - cd build/integration
+    - ./run.sh features/contacts-menu.feature
+
+trigger:
+  branch:
+    - master
+    - stable*
+  event:
+    - pull_request
+    - push
+
+---
+kind: pipeline
 name: integration-favorites
 
 steps:
@@ -1709,7 +1734,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.
@@ -1739,7 +1764,7 @@ trigger:
 #
 #services:
 #- name: selenium
-#  image: selenium/standalone-firefox:2.53.1-beryllium
+#  image: selenium/standalone-chrome:3.141.59
 #  environment:
 #    # Reduce default log level for Selenium server (INFO) as it is too
 #    # verbose.
@@ -1769,7 +1794,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.
@@ -1799,7 +1824,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.
@@ -1829,7 +1854,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.
@@ -1859,7 +1884,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.
@@ -1889,7 +1914,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.
@@ -1919,7 +1944,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.
@@ -1949,7 +1974,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.
@@ -1979,7 +2004,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.
@@ -2009,7 +2034,7 @@ steps:
 
 services:
 - name: selenium
-  image: selenium/standalone-firefox:2.53.1-beryllium
+  image: selenium/standalone-chrome:3.141.59
   environment:
     # Reduce default log level for Selenium server (INFO) as it is too
     # verbose.

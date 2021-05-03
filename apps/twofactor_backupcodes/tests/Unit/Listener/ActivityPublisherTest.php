@@ -3,8 +3,6 @@
 declare(strict_types=1);
 
 /**
- *
- *
  * @author Christoph Wurst <christoph@winzerhof-wurst.at>
  * @author Roeland Jago Douma <roeland@famdouma.nl>
  *
@@ -91,8 +89,7 @@ class ActivityPublisherTest extends TestCase {
 			->with('fritz')
 			->willReturnSelf();
 		$this->activityManager->expects($this->once())
-			->method('publish')
-			->willReturn($activityEvent);
+			->method('publish');
 
 		$this->listener->handle($event);
 	}

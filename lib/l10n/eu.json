@@ -4,6 +4,7 @@
     "See %s" : "Ikusi %s",
     "Sample configuration detected" : "Adibide-ezarpena detektatua",
     "It has been detected that the sample configuration has been copied. This can break your installation and is unsupported. Please read the documentation before performing changes on config.php" : "Detektatu da adibide-ezarpena kopiatu dela. Honek zure instalazioa apur dezake eta ez da onartzen. Irakurri dokumentazioa config.php fitxategia aldatu aurretik.",
+    "Other activities" : "Beste jarduerak",
     "%1$s and %2$s" : "%1$s eta %2$s",
     "%1$s, %2$s and %3$s" : "%1$s, %2$s eta %3$s",
     "%1$s, %2$s, %3$s and %4$s" : "%1$s, %2$s, %3$s eta %4$s",
@@ -47,6 +48,7 @@
     "seconds ago" : "duela segundu batzuk",
     "Empty file" : "Fitxategi hutsa",
     "File already exists" : "Badago izen bereko fitxategi bat",
+    "Invalid path" : "Bide-izen baliogabea",
     "Templates" : "Txantiloiak",
     "File name is a reserved word" : "Fitxategi izena hitz erreserbatua da",
     "File name contains at least one invalid character" : "Fitxategi izenak karaktere baliogabe bat du gutxienez ",
@@ -91,8 +93,8 @@
     "You are not allowed to share %s" : "Ez zadue %s elkarbanatzeko baimendua",
     "Can’t increase permissions of %s" : "Ezin dira %s(r)en baimenak handitu",
     "Files can’t be shared with delete permissions" : "Fitxategiak ezin dira ezabatze baimenarekin partekatu",
+    "Files can’t be shared with create permissions" : "Fitxategiak ezin dira sortze baimenarekin partekatu",
     "Expiration date is in the past" : "Iraungitze-data iraganean dago",
-    "Can’t set expiration date more than %s days in the future" : "Ezin da iraungitze-data etorkizunean %s egun baino gehiagora jarri",
     "%1$s shared »%2$s« with you" : "%1$serabiltzaileak »%2$s« partekatu du zurekin",
     "%1$s shared »%2$s« with you." : "%1$serabiltzaileak »%2$s« partekatu du zurekin",
     "Click the button below to open it." : "Egin klik beheko botoian hura irekitzeko",
@@ -192,6 +194,7 @@
     "Storage connection timeout. %s" : "Biltegiratze-konexioa denboraz kanpo geratu da. %s",
     "Following databases are supported: %s" : "Hurrengo datubaseak onartzen dira: %s",
     "Following platforms are supported: %s" : "Hurrengo plataformak onartzen dira: %s",
-    "Invalid Federated Cloud ID" : "Federatutako Hodei ID ezegokia"
+    "Invalid Federated Cloud ID" : "Federatutako Hodei ID ezegokia",
+    "Can’t set expiration date more than %s days in the future" : "Ezin da iraungitze-data etorkizunean %s egun baino gehiagora jarri"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

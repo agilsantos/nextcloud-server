@@ -404,7 +404,7 @@ class OC {
 
 	public static function initSession() {
 		if (self::$server->getRequest()->getServerProtocol() === 'https') {
-			ini_set('session.cookie_secure', true);
+			ini_set('session.cookie_secure', 'true');
 		}
 
 		// prevents javascript from accessing php session cookies
@@ -929,7 +929,7 @@ class OC {
 				\OC::$server->get(\bantu\IniGetWrapper\IniGetWrapper::class),
 				\OC::$server->getL10N('lib'),
 				\OC::$server->query(\OCP\Defaults::class),
-				\OC::$server->getLogger(),
+				\OC::$server->get(\Psr\Log\LoggerInterface::class),
 				\OC::$server->getSecureRandom(),
 				\OC::$server->query(\OC\Installer::class)
 			);

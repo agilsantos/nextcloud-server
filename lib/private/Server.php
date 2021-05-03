@@ -100,6 +100,9 @@ use OC\Files\Type\Loader;
 use OC\Files\View;
 use OC\FullTextSearch\FullTextSearchManager;
 use OC\Http\Client\ClientService;
+use OC\Http\Client\DnsPinMiddleware;
+use OC\Http\Client\LocalAddressChecker;
+use OC\Http\Client\NegativeDnsCache;
 use OC\IntegrityCheck\Checker;
 use OC\IntegrityCheck\Helpers\AppLocator;
 use OC\IntegrityCheck\Helpers\EnvironmentHelper;
@@ -142,6 +145,7 @@ use OC\Template\JSCombiner;
 use OCA\Theming\ImageManager;
 use OCA\Theming\ThemingDefaults;
 use OCA\Theming\Util;
+use OCA\WorkflowEngine\Service\Logger;
 use OCP\Accounts\IAccountManager;
 use OCP\App\IAppManager;
 use OCP\Authentication\LoginCredentials\IStore;
@@ -728,7 +732,7 @@ class Server extends ServerContainer implements IServerContainer {
 				$c->get(\OC\User\Manager::class),
 				$c->getAppDataDir('avatar'),
 				$c->getL10N('lib'),
-				$c->get(ILogger::class),
+				$c->get(LoggerInterface::class),
 				$c->get(\OCP\IConfig::class),
 				$c->get(IAccountManager::class),
 				$c->get(KnownUserService::class)
@@ -822,6 +826,22 @@ class Server extends ServerContainer implements IServerContainer {
 
 		$this->registerAlias(ICertificateManager::class, CertificateManager::class);
 		$this->registerAlias(IClientService::class, ClientService::class);
+		$this->registerService(LocalAddressChecker::class, function (ContainerInterface $c) {
+			return new LocalAddressChecker(
+				$c->get(ILogger::class),
+			);
+		});
+		$this->registerService(NegativeDnsCache::class, function (ContainerInterface $c) {
+			return new NegativeDnsCache(
+				$c->get(ICacheFactory::class),
+			);
+		});
+		$this->registerService(DnsPinMiddleware::class, function (ContainerInterface $c) {
+			return new DnsPinMiddleware(
+				$c->get(NegativeDnsCache::class),
+				$c->get(LocalAddressChecker::class)
+			);
+		});
 		$this->registerDeprecatedAlias('HttpClientService', IClientService::class);
 		$this->registerService(IEventLogger::class, function (ContainerInterface $c) {
 			$eventLogger = new EventLogger();
@@ -858,7 +878,7 @@ class Server extends ServerContainer implements IServerContainer {
 				$c->get(IGroupManager::class),
 				$c->get(ICacheFactory::class),
 				$c->get(SymfonyAdapter::class),
-				$c->get(ILogger::class)
+				$c->get(LoggerInterface::class)
 			);
 		});
 		/** @deprecated 19.0.0 */
@@ -1072,7 +1092,7 @@ class Server extends ServerContainer implements IServerContainer {
 		$this->registerDeprecatedAlias('NotificationManager', \OCP\Notification\IManager::class);
 
 		$this->registerService(CapabilitiesManager::class, function (ContainerInterface $c) {
-			$manager = new CapabilitiesManager($c->get(ILogger::class));
+			$manager = new CapabilitiesManager($c->get(LoggerInterface::class));
 			$manager->registerCapability(function () use ($c) {
 				return new \OC\OCS\CoreCapabilities($c->get(\OCP\IConfig::class));
 			});
@@ -1315,7 +1335,7 @@ class Server extends ServerContainer implements IServerContainer {
 				$c->get(AppFetcher::class),
 				$c->get(IClientService::class),
 				$c->get(ITempManager::class),
-				$c->get(ILogger::class),
+				$c->get(LoggerInterface::class),
 				$c->get(\OCP\IConfig::class),
 				\OC::$CLI
 			);

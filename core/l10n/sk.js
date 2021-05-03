@@ -109,7 +109,6 @@ OC.L10N.register(
     "Passwordless authentication is not supported in your browser." : "Bezheslové overovanie nie je vo vašom prehliadači podporované.",
     "Passwordless authentication is only available over a secure connection." : "Bezheslové overovanie je dostupné len pomocou šifrovaného pripojenia.",
     "Reset password" : "Obnovenie hesla",
-    "A password reset message has been sent to the e-mail address of this account. If you do not receive it, check your spam/junk folders or ask your local administrator for help." : "Správa s informáciami na zmenu hesla bola zaslaná na email uvedený v tomto účte. Ak tam nie je, skontrolujte si priečinok nevyžiadanej pošty a kôš, alebo požiadajte svojho administrátora o pomoc.",
     "If it is not there ask your local administrator." : "Ak tam nie je, pýtajte sa vášho lokálneho administrátora.",
     "Couldn't send reset email. Please contact your administrator." : "Nemožno poslať email pre obnovu. Kontaktujte prosím vášho administrátora.",
     "Password can not be changed. Please contact your administrator." : "Heslo nemožno zmeniť. Kontaktujte prosím vášho administrátora.",
@@ -139,6 +138,7 @@ OC.L10N.register(
     "No results for {query}" : "Žiadne výsledky pre {query}",
     "Loading more results …" : "Načítava sa viac výsledkov …",
     "Load more results" : "Načítať viac výsledkov",
+    "Search" : "Hľadať",
     "Settings" : "Nastavenia",
     "Could not load your contacts" : "Nie je možné načítať Vaše kontakty",
     "Search contacts …" : "Prehľadať kontakty...",
@@ -357,8 +357,8 @@ OC.L10N.register(
     "Searching other places" : "Prehľadanie ostatných umiestnení",
     "No search results in other folders for {tag}{filter}{endtag}" : "Žiadne výsledky vyhľadávania v ostatných priečinkoch pre {tag}{filter}{endtag}",
     "_{count} search result in another folder_::_{count} search results in other folders_" : ["{count} výsledok vyhľadávania v ostatných priečinkoch","{count} výsledky vyhľadávania v ostatných priečinkoch","{count} výsledkov vyhľadávania v ostatných priečinkoch","{count} výsledkov vyhľadávania v ostatných priečinkoch"],
+    "A password reset message has been sent to the e-mail address of this account. If you do not receive it, check your spam/junk folders or ask your local administrator for help." : "Správa s informáciami na zmenu hesla bola zaslaná na email uvedený v tomto účte. Ak tam nie je, skontrolujte si priečinok nevyžiadanej pošty a kôš, alebo požiadajte svojho administrátora o pomoc.",
     "Nextcloud {app}" : "Nextcloud {app}",
-    "Search" : "Hľadať",
     "These apps will be updated:" : "Tieto aplikácie budú aktualizované:"
 },
 "nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);");

@@ -121,6 +121,25 @@ class AccountManager implements IAccountManager {
 	}
 
 	/**
+	 *
+	 * @param string $input
+	 * @return string
+	 * @throws \InvalidArgumentException When the website did not have http(s) as protocol or the host name was empty
+	 */
+	protected function parseWebsite(string $input): string {
+		$parts = parse_url($input);
+		if (!isset($parts['scheme']) || ($parts['scheme'] !== 'https' && $parts['scheme'] !== 'http')) {
+			throw new \InvalidArgumentException(self::PROPERTY_WEBSITE);
+		}
+
+		if (!isset($parts['host']) || $parts['host'] === '') {
+			throw new \InvalidArgumentException(self::PROPERTY_WEBSITE);
+		}
+
+		return $input;
+	}
+
+	/**
 	 * update user record
 	 *
 	 * @param IUser $user
@@ -134,6 +153,9 @@ class AccountManager implements IAccountManager {
 		$updated = true;
 
 		if (isset($data[self::PROPERTY_PHONE]) && $data[self::PROPERTY_PHONE]['value'] !== '') {
+			// Sanitize null value.
+			$data[self::PROPERTY_PHONE]['value'] = $data[self::PROPERTY_PHONE]['value'] ?? '';
+
 			try {
 				$data[self::PROPERTY_PHONE]['value'] = $this->parsePhoneNumber($data[self::PROPERTY_PHONE]['value']);
 			} catch (\InvalidArgumentException $e) {
@@ -152,6 +174,17 @@ class AccountManager implements IAccountManager {
 				} else {
 					$data[$propertyName]['value'] = '';
 				}
+			}
+		}
+
+		if (isset($data[self::PROPERTY_WEBSITE]) && $data[self::PROPERTY_WEBSITE]['value'] !== '') {
+			try {
+				$data[self::PROPERTY_WEBSITE]['value'] = $this->parseWebsite($data[self::PROPERTY_WEBSITE]['value']);
+			} catch (\InvalidArgumentException $e) {
+				if ($throwOnData) {
+					throw $e;
+				}
+				$data[self::PROPERTY_WEBSITE]['value'] = '';
 			}
 		}
 

@@ -103,7 +103,7 @@ OC.L10N.register(
     "Please specify a file or folder path" : "Določiti je treba datoteko ali pot do mape",
     "Wrong path, file/folder doesn't exist" : "Napačna pot; datoteka ali mapa ne obstaja",
     "Could not create share" : "Mesta souporabe ni mogoče ustvariti",
-    "invalid permissions" : "neustrezna dovoljenja",
+    "Invalid permissions" : "Neustrezna dovoljenja",
     "Please specify a valid user" : "Navesti je treba veljavnega uporabnika.",
     "Group sharing is disabled by the administrator" : "Skupinska souporaba je skrbniško onemogočena",
     "Please specify a valid group" : "Navesti je treba veljavno skupino",
@@ -113,6 +113,8 @@ OC.L10N.register(
     "Sharing %s sending the password by Nextcloud Talk failed because Nextcloud Talk is not enabled" : "Souporaba %s s pošiljanjem gesla prek programa Nextcloud Talk je spodletela, ker program Talk ni omogočen.",
     "Invalid date, date format must be YYYY-MM-DD" : "Neveljaven zapis časa; biti mora v zapisu YYYY-MM-DD",
     "Sharing %1$s failed because the back end does not allow shares from type %2$s" : "Souporaba %1$s je spodletela, ker ozadnji program ne omogoča souporabe prek vrste %2$s.",
+    "Please specify a valid federated user id" : "Navesti je treba veljaven ID zveznega uporabnika",
+    "Please specify a valid federated group id" : "Navesti je treba veljaven ID zvezne skupine",
     "You cannot share to a Circle if the app is not enabled" : "Ni mogoče odobriti souporabe s Krogom, če program ni omogočen",
     "Please specify a valid circle" : "Določite veljaven krog",
     "Sharing %s failed because the back end does not support room shares" : "Souporaba %s je spodletela, ker sistem ne dovoli souporabe znotraj posameznih sob",
@@ -181,6 +183,7 @@ OC.L10N.register(
     "Add another link" : "Dodaj novo povezavo",
     "Create a new share link" : "Ustvari novo povezavo za souporabo",
     "Shared via link by {initiator}" : "{initiator} omogoči souporabo prek povezave",
+    "Mail share ({label})" : "Souporaba prek elektronske pošte ({label})",
     "Share link ({label})" : "Souporaba povezave ({label})",
     "Share link" : "Povezava za souporabo",
     "Error, please enter proper password and/or expiration date" : "Napaka. Vpisati je treba pravo geslo ali datum preteka",
@@ -232,6 +235,7 @@ OC.L10N.register(
     "Uploading files" : "Pošiljanje datotek",
     "Uploaded files:" : "Poslane datoteke:",
     "By uploading files, you agree to the %1$sterms of service%2$s." : "S pošiljanjem datotek v oblak sprejemate tudi %1$spogoje uporabe storitve%2$s.",
+    "invalid permissions" : "neustrezna dovoljenja",
     "Name, email, or federated cloud ID …" : "Ime, elektronski naslov, ali ID zveznega oblaka ..."
 },
 "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);");
